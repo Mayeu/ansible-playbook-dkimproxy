@@ -1,0 +1,4 @@
+---
+# handlers file for dkimproxy
+- name: restart dkimproxy
+  service: name=dkimproxy state=restarted

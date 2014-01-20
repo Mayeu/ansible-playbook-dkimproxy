@@ -1,0 +1,22 @@
+---
+# tasks file for dkimproxy
+- name: install dkimproxy
+  apt: pkg=dkimproxy state=latest
+
+- name: copy the config file
+  copy:
+    src=files/dkimproxy/
+    dest=/etc/dkimproxy/
+    owner=root
+    group=root
+    mode=0640
+  notify: restart dkimproxy
+
+- name: copy the private key
+  copy:
+    src=files/dkimproxy_private.key
+    dest=/var/lib/dkimproxy/private.key
+    owner=root
+    group=ssl-cert
+    mode=0640
+  notify: restart dkimproxy
