@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mayeu
-  description:
+  description: "DKIMproxy is an SMTP-proxy that signs and/or verifies emails."
   license: MIT
   min_ansible_version: 1.4
   #
